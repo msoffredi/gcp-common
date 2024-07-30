@@ -4,3 +4,4 @@ export * from './testing';
 export * from './api';
 export * from './api-errors';
 export * from './events';
+export * from './route-handlers';
