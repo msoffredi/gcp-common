@@ -11,4 +11,13 @@ export class RequestHelper {
 
         return '';
     };
+
+    public static logReq = (req: Request): string => {
+        return JSON.stringify({
+            method: req.method,
+            headers: req.headers,
+            body: req.body,
+            query: req.query,
+        });
+    };
 }
