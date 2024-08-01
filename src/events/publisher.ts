@@ -5,7 +5,7 @@ export const publisher = async (
     topicName: string,
     eventData: BaseEventDataType,
     pubSubClient?: PubSub
-): Promise<void> => {
+): Promise<string> => {
     const myPubSubClient = pubSubClient || new PubSub();
     const dataBuffer = Buffer.from(JSON.stringify(eventData.data));
 
@@ -14,9 +14,5 @@ export const publisher = async (
         attributes: { type: eventData.type },
     });
 
-    console.log('Event published:', {
-        msgId,
-        topicName,
-        eventData,
-    });
+    return msgId;
 };
